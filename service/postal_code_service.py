@@ -14,7 +14,7 @@ def carregar_cache():
         return json.load(arquivo)
 
 def salvar_cache():
-    CACHE_FILE.parent.mkdir(parents=True, exist_ok+True)
+    CACHE_FILE.parent.mkdir(parents=True, exist_ok=True)
     with open(CACHE_FILE, "w", encoding="utf-8") as arquivo: 
         json.dump(cache, arquivo, ensure_ascii=False, indent=2)
 
