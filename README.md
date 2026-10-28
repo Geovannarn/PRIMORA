@@ -22,11 +22,17 @@ Separar registros processados daqueles que precisam de revisão.
 **Tecnologias utilizadas**
 
 **Python:** desenvolvimento da lógica de tratamento dos dados.
+
 **Pandas:** leitura, manipulação e processamento de arquivos CSV.
+
 **Expressões regulares (Regex):** validação e padronização de formatos.
+
 **Requests:** comunicação com APIs externas.
+
 **JSON:** armazenamento de dados em cache.
+
 **Pytest:** execução de testes automatizados.
+
 **Git e GitHub:** versionamento e gerenciamento do código.
 
 **Minha contribuição**
@@ -36,7 +42,9 @@ Minha contribuição no projeto está relacionada à validação, normalização
 Foram implementadas três funções principais:
 
 **`normalizar_cep()`**: valida o formato do CEP e retorna uma versão padronizada, sem hífen.
+
 **`verifica_cep()`**: informa se o CEP corresponde ao formato esperado.
+
 **`formatar_cep()`**: retorna o CEP no formato `00000-000`.
 
 A implementação utiliza expressões regulares (*Regex*) para verificar o padrão de oito dígitos, com ou sem hífen. Também trata entradas inválidas, retornando `None` na normalização e na formatação, ou `False` na verificação.
