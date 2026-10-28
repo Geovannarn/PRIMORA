@@ -44,7 +44,7 @@ A implementação utiliza expressões regulares (*Regex*) para verificar o padr�
 **Observação:** a validação de formato não garante que o CEP exista ou corresponda a um endereço real.
 
 ## Estrutura do projeto
-
+`` 
 Vetor_ETL/
 ├── validators/
 │   ├── postal_code.py
@@ -62,7 +62,7 @@ Vetor_ETL/
 │   └── clean/
 ├── etl_clientes.py
 └── README.md
-
+``  
 
 ## Funcionamento do pipeline
 
