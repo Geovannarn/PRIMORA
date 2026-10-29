@@ -14,4 +14,3 @@ def consultar_viacep(cep):
 
     except requests.RequestException:
             return None
-
