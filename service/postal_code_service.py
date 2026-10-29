@@ -1,7 +1,8 @@
-
 import json
+import re
 import time
 from pathlib import Path
+
 from integrations.viacep import consultar_viacep
 from integrations.brasilapi import consultar_brasilapi
 
@@ -25,11 +26,14 @@ def salvar_cache(cache):
 
 
 def consulta_cep(cep):
-    cep = str(cep).replace("-", "").strip()
+    cep = re.sub(r"\D", "", str(cep or ""))
+
+    if len(cep) != 8:
+        return None
 
     cache = carregar_cache()
 
-    if cep in cache:
+    if cep in cache and cache[cep]:
         return cache[cep]
 
     for tentativa in range(TENTATIVAS):
@@ -49,8 +53,5 @@ def consulta_cep(cep):
         cache[cep] = resultado
         salvar_cache(cache)
         return resultado
-
-    cache[cep] = None
-    salvar_cache(cache)
 
     return None

@@ -25,8 +25,8 @@ def test_limpar_cnpj(entrada, esperado):
 @pytest.mark.parametrize(
     "entrada, esperado",
     [
-        ("(61) 99999-9999", "61999999999"),
-        ("61999999999", "61999999999"),
+        ("(61) 99999-9999", "+5561999999999"),
+        ("61999999999", "+5561999999999"),
     ],
 )
 def test_limpar_telefone(entrada, esperado):
@@ -39,8 +39,8 @@ def test_limpar_telefone(entrada, esperado):
 @pytest.mark.parametrize(
     "entrada, esperado",
     [
-        ("71929-000", "71929000"),
-        ("71929000", "71929000"),
+        ("71929-000", "71929-000"),
+        ("71929000", "71929-000"),
     ],
 )
 def test_limpar_cep(entrada, esperado):
